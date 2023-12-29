@@ -1,5 +1,6 @@
 from django.db import models
 from markdownx.models import MarkdownxField
+import reversion
 
 class Subject(models.Model):
     name = models.CharField(max_length=100)
@@ -7,13 +8,15 @@ class Subject(models.Model):
     def __str__(self):
         return self.name
 
-class Topic(models.Model):
+@reversion.register()
+class Topic(WithDateAndOwner):
     name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
 
-class Term(models.Model):
+@reversion.register()
+class Term(WithDateAndOwner):
     name = models.CharField(max_length=200, unique=True)
     short_version = models.CharField(max_length=200)
     long_version = MarkdownxField()
