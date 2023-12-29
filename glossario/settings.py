@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ["imolineris.pythonanywhere.com",]
 # Application definition
 
 INSTALLED_APPS = [
+    "classroom.apps.ClassroomConfig",
     "customer.apps.CustomerConfig",
     "terms.apps.TermsConfig",
     "moxutils.apps.MoxutilsConfig",
