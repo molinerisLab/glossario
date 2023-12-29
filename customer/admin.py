@@ -1,7 +1,6 @@
 from django.contrib import admin
 from moxutils.admin import export_csv_action, WithDateAndOwnerAdmin, WithDateAndOwnerAdmin_show, WithDateAndOwnerAdminStackedInline, WithDateAndOwnerAdminTabularInline
 from .models import Customer, Group
-from stabulario.models import Project
 from .forms import CustomerForm
 
 
@@ -12,12 +11,6 @@ class CustomersInGroupInline(WithDateAndOwnerAdminTabularInline):
     model = Customer
     verbose_name = "Customers in group"
     verbose_name_plural = "Customers in group"
-    def has_add_permission(self, request, o):
-        return False
-
-class ProjectsInGroupInline(WithDateAndOwnerAdminTabularInline):
-    model = Project
-    readonly_fields = ('number_of_mouses_currently_used','group',)
     def has_add_permission(self, request, o):
         return False
 
