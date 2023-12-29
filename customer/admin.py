@@ -1,5 +1,5 @@
 from django.contrib import admin
-from moxutils.admin import export_csv_action, WithDateAndOwnerAdmin, WithDateAndOwnerAdmin_show, WithDateAndOwnerAdminStackedInline, WithDateAndOwnerAdminTabularInline
+from moxutils.admin import WithDateAndOwnerAdmin, WithDateAndOwnerAdmin_show, WithDateAndOwnerAdminStackedInline, WithDateAndOwnerAdminTabularInline
 from .models import Customer, Group
 from .forms import CustomerForm
 
@@ -16,7 +16,7 @@ class CustomersInGroupInline(WithDateAndOwnerAdminTabularInline):
 
 @admin.register(Group)
 class GroupAdmin(MyAdmin):
-    inlines = (CustomersInGroupInline, ProjectsInGroupInline)
+    inlines = (CustomersInGroupInline,)
 
 @admin.register(Customer)
 class CustomerAdmin(MyAdmin):

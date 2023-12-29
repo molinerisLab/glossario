@@ -25,12 +25,15 @@ SECRET_KEY = "django-insecure-il637z8$s^ip1xi2wqlr@!=gyfmb(!^3*fb#)e^utk-8l47i!g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["imolineris.pythonanywhere.com"]
+ALLOWED_HOSTS = ["imolineris.pythonanywhere.com",]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    "customer.apps.CustomerConfig",
+    "terms.apps.TermsConfig",
+    "moxutils.apps.MoxutilsConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
