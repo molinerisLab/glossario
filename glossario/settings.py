@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     "customer.apps.CustomerConfig",
     "terms.apps.TermsConfig",
     "moxutils.apps.MoxutilsConfig",
+    'markdownx',
+    'reversion',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
